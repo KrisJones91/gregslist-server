@@ -20,6 +20,7 @@ class CarsService {
     }
 
     async edit(id, body) {
+        //this is where the actual EDITING occurs
         return await dbContext.Cars.findByIdAndUpdate(id, body, { new: true })
     }
 

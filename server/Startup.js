@@ -5,11 +5,12 @@ import helmet from "helmet";
 import { RegisterControllers, Paths } from "../Setup";
 
 export default class Startup {
+  //this is the middleware!!
   static ConfigureGlobalMiddleware(app) {
     // NOTE Configure and Register Middleware
     let whitelist = ["http://localhost:8080"];
     let corsOptions = {
-      origin: function(origin, callback) {
+      origin: function (origin, callback) {
         let originIsWhitelisted = whitelist.indexOf(origin) !== -1;
         callback(null, originIsWhitelisted);
       },
